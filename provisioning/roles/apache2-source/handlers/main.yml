@@ -1,0 +1,8 @@
+---
+- name: Copying httpd.conf
+  copy: src=httpd.conf dest=/usr/local/apache2/conf/httpd.conf mode=644 backup=yes
+  tags: httpd
+
+- name: Starting httpd
+  command: /usr/local/apache2/bin/apachectl start
+  tags: httpd

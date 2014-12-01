@@ -1,0 +1,5 @@
+---
+- name: installing nowasp
+  git: repo={{ item }} dest=/opt/lampp/htdocs/nowasp accept_hostkey=yes
+  with_items:
+    - git://git.code.sf.net/p/mutillidae/git

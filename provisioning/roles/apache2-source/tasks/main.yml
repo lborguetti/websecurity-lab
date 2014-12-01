@@ -1,0 +1,26 @@
+---
+- name: Installing dependencies
+  apt: pkg=libaprutil1-dev
+  tags: httpd
+
+- name: Downloading httpd source
+  get_url: url={{ httpd_url }}/{{ httpd_version }}.tar.gz dest=/usr/local/{{ httpd_version }}.tar.gz
+  tags: httpd
+
+- name: Extract httpd source
+  command: tar -xzf {{ httpd_version }}.tar.gz chdir=/usr/local
+  tags: httpd
+
+- name: Configuring httpd
+  shell: CFLAGS="-DBIG_SECURITY_HOLE" ./configure --enable-so chdir=/usr/local/{{ httpd_version }}
+
+- name: Building httpd
+  shell: CFLAGS="-DBIG_SECURITY_HOLE" make chdir=/usr/local/{{ httpd_version }}
+  tags: httpd
+
+- name: Installing httpd
+  shell: make install chdir=/usr/local/{{ httpd_version }}
+  tags: httpd
+  notify:
+    - Copying httpd.conf
+    - Starting httpd

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  sudo: yes
+
+  roles:
+    - common
+    - apache2-source
+    - php5-source
+    - git
+    - mysql
+    - dvwa
+    #- nowasp

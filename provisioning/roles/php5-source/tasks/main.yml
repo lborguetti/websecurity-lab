@@ -1,0 +1,27 @@
+---
+- name: Installing dependencies
+  shell: DEBIAN_FRONTEND=noninteractive apt-get -y build-dep php5
+  tags: php
+
+- name: Downloading php source
+  get_url: url={{ php_url }} dest=/usr/local/{{ php_version }}.tar.gz
+  tags: php
+
+- name: Extract php source
+  command: tar -xzf {{ php_version }}.tar.gz chdir=/usr/local
+  tags: php
+
+- name: Configuring php
+  shell: ./configure --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql=mysqlnd   --with-mysqli=mysqlnd chdir=/usr/local/{{ php_version }}
+
+- name: Building php
+  shell: make chdir=/usr/local/{{ php_version }}
+  tags: php
+
+- name: Installing php
+  shell: make install chdir=/usr/local/{{ php_version }}
+  tags: php
+
+- name: Copying php.ini
+  copy: src=php.ini dest=/usr/local/lib/php.ini mode=644
+  tags: php

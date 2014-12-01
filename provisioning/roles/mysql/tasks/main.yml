@@ -1,0 +1,16 @@
+---
+- name: Install mysql-server
+  apt: pkg=mysql-server
+  tags: mysql
+
+- name: Install python-mysqldb
+  apt: pkg=python-mysqldb
+  tags: mysql
+
+- name: Update mysql root password
+  mysql_user: name="root" host={{ item }} password={{ mysql_root_password }}
+  with_items:
+    - 127.0.0.1
+    - ::1
+    - localhost
+  tags: mysql
