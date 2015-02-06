@@ -22,10 +22,11 @@ Point your browser for http://192.168.56.50/dvwa/setup.php or http://127.0.0.1:8
 
 Click on the 'Create / Reset Database' button below to create your database.
 
-Default username = ***admin***
-Default password = ***password***
+Default username = **admin**
 
-Security Level default = ***high***
+Default password = **password**
+
+Security Level default = **high**
 
 ## Environment contains
 
