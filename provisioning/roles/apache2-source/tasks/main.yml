@@ -23,4 +23,3 @@
   tags: httpd
   notify:
     - Copying httpd.conf
-    - Starting httpd
