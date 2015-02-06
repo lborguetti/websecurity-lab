@@ -1,5 +1,7 @@
 ---
-- name: installing dvwa
+- name: Installing dvwa
   git: repo={{ item }} dest=/usr/local/apache2/htdocs/dvwa
   with_items:
     - https://github.com/RandomStorm/DVWA
+  notify:
+    - Starting httpd
