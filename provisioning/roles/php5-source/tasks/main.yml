@@ -7,7 +7,7 @@
   get_url: url={{ php_url }} dest=/usr/local/{{ php_version }}.tar.gz
   tags: php
 
-- name: Extract php source
+- name: Extracting php source
   command: tar -xzf {{ php_version }}.tar.gz chdir=/usr/local
   tags: php
 
