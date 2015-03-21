@@ -1,0 +1,8 @@
+---
+- name: Updating language pack
+  apt: pkg=language-pack-en
+  tags: common
+
+- name: Updating locale to {{ locale }}
+  command: /usr/sbin/update-locale LANG={{ locale }} LC_ALL={{ locale }}
+  tags: common
