@@ -1,0 +1,12 @@
+---
+- name: Updating localtime to {{ timezone }}
+  command: /bin/cp /usr/share/zoneinfo/{{ timezone }} /etc/localtime
+  tags: common
+
+- name: Updating timezone to {{ timezone }}
+  template: src=default-timezone.j2 dest=/etc/timezone
+  tags: common
+
+- name: Updating tzdata
+  command: /usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata
+  tags: common

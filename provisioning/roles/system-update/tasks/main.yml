@@ -1,0 +1,4 @@
+---
+- name: Updating cache
+  apt:  update-cache=yes
+  tags: common
