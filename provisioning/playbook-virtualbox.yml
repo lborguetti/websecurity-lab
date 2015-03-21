@@ -4,7 +4,8 @@
 
   roles:
     - system-update
-    - locale-timezone-settings
+    - system-locale
+    - system-timezone
     - apache2-source
     - php5-source
     - git
