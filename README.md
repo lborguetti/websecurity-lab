@@ -1,4 +1,4 @@
-# websecurity.lab
+# websecurity-lab
 
 This project is a simple lab with PHP/MySQL web application vulnerable.
 
@@ -14,8 +14,8 @@ Don't use it in production.
 
 ## Running
 
-    git clone https://github.com/lborguetti/websecurity.lab
-    cd websecurity.lab
+    git clone https://github.com/lborguetti/websecurity-lab
+    cd websecurity-lab
     vagrant up
 
 Point your browser for http://192.168.56.50/dvwa/setup.php or http://127.0.0.1:8080/dvwa/setup.php
