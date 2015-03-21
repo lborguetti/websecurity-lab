@@ -1,0 +1,11 @@
+---
+- hosts: all
+  sudo: yes
+
+  roles:
+    - system-update
+    - php5-source
+    - git
+    - mysql
+    - dvwa
+    #- nowasp
