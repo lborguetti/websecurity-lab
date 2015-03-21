@@ -25,7 +25,7 @@ Don't use it in production.
 
 ### Provider with VirtualBox Machine
 
-        cd vagrant-docker
+        cd vagrant-virtualbox
         vagrant up
 
 
