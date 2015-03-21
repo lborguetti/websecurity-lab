@@ -3,7 +3,8 @@
   sudo: yes
 
   roles:
-    - common
+    - system-update
+    - locale-timezone-settings
     - apache2-source
     - php5-source
     - git
