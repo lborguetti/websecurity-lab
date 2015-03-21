@@ -4,6 +4,8 @@
 
   roles:
     - system-update
+    - system-locale
+    - apache2-source
     - php5-source
     - git
     - mysql
